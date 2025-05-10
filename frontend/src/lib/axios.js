@@ -1,8 +1,9 @@
 import axios from "axios";
 
-const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:5001/api" : import.meta.env.VITE_BACKEND_URL;
+// Dynamically use the VITE_BACKEND_URL for both local and production
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
 export const axiosInstance = axios.create({
   baseURL: BASE_URL,
-  withCredentials: true, // send cookies with the request
+  withCredentials: true, // Send cookies with the request
 });
